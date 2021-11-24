@@ -1,6 +1,7 @@
 # Project related
-venv-spam-detection
-data
+venv-spam-detection/
+data/
+models/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

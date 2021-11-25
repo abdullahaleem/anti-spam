@@ -1,10 +1,12 @@
+# python -m pypyr src/pipelines/ml-model-download 
+
 context_parser: pypyr.parser.keyvaluepairs
 steps:
   - name: pypyr.steps.contextsetf
     in:
       contextSetf:
         local_dest_dir: models/spam-detection
-        file_keys: ["exports/spam-detection/spam-detection-metadata.json", "exports/spam-detection/spam-detection-model.h5", "exports/spam-detection/spam-detection-model.h5"]
+        file_keys: ["exports/spam-detection/spam-detection-metadata.json", "exports/spam-detection/spam-detection-model.h5", "exports/spam-detection/spam-detection-tokenizer.json"]
   - name: pypyr.steps.py
     in:
       py: |

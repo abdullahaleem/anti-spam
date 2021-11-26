@@ -10,3 +10,4 @@ uvicorn
 scikit-learn
 pypyr
 boto3
+dataclasses

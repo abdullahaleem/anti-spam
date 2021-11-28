@@ -15,7 +15,7 @@ RUN apt-get update && \
     gcc \ 
     make 
 
-RUN apt-get install python3.9-venv
+RUN apt-get install python3.9-venv -y
 
 # create a virtual environment
 RUN python3 -m venv /opt/venv && /opt/venv/bin/python -m pip install -r requirements.txt

@@ -1,13 +1,12 @@
 FROM python:3.9-slim
 
-COPY ./src/app/ /src/app/
-COPY ./src/pipelines /src/pipelines/
-COPY ./src/notebooks /src/notebooks/
-COPY ./requirements.txt /requirements.txt
-COPY ./entrypoint.sh /entrypoint.sh
-COPY ./.env /.env
+COPY ./src/app/ home/src/app/
+COPY ./src/pipelines home/src/pipelines/
+COPY ./requirements.txt home/requirements.txt
+COPY ./entrypoint.sh home/entrypoint.sh
+COPY ./.env home/.env
 
-#WORKDIR /src
+WORKDIR /home
 
 # making entrypoint.sh executable. it might work without this, but it's safer
 RUN chmod +x /entrypoint.sh

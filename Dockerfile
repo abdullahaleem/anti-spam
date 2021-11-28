@@ -1,9 +1,9 @@
 FROM python:3.9-slim
 
-COPY ./src/app/ /src/app/
-COPY ./requirements.txt /src/requirements.txt
-COPY ./.env /src/.env
-COPY ./entrypoint.sh /src/entrypoint.sh
+COPY src/app/ /src/app/
+COPY requirements.txt /src/requirements.txt
+COPY .env /src/.env
+COPY entrypoint.sh /src/entrypoint.sh
 
 RUN apt-get update && \
     apt-get install -y \

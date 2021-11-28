@@ -101,3 +101,25 @@ def export_inferences():
 
 # we will not use the heroku or digital ocean because we dont control the entire environement
 # we dont control the infrastructure
+
+# Private github repos
+# think of vm machines as temp sessions and not work stations
+# we can add github user and id when we clone the repo but we want to do something more
+# sustainable here. we will use github personal access tokens for this
+# first we will add personl token to machine using export TOKEN = <TOKEN>
+# then git clone https://${TOKEN}:x-oauth-basic@github.com/abdullahaleem/spam-detection-microservice.git
+
+"""
+Docker
+When we are dealing with machine learning specially we need to super careful about versions of python and packages
+highly recommended to islolate our applicaiton. Great choice for production. To install docker
+sudo apt-get update -y
+curl -fsSL https://get.docker.com -o get_docker.sh
+sudo bash get_docker.sh
+sudo apt-get autoremove -y # after installing things
+"""
+"""
+nginx
+when the system reboots the container will restart itself
+docker run --restart always -p 80:80 -d nginx
+"""

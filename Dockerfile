@@ -1,9 +1,12 @@
 FROM python:3.9-slim
 
-COPY src/app/ /src/app/
-COPY requirements.txt /src/requirements.txt
+COPY ./src/app/ /src/app/
+COPY ./requirements.txt /src/requirements.txt
+COPY ./entrypoint.sh /src/entrypoint.sh
 COPY .env /src/.env
-COPY entrypoint.sh /src/entrypoint.sh
+
+# making entrypoint.sh executable. it might work without this, but it's safer
+RUN chmod +x /src/entrypoint.sh
 
 RUN apt-get update && \
     apt-get install -y \

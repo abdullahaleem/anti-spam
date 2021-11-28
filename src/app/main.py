@@ -126,3 +126,10 @@ nginx
 when the system reboots the container will restart itself
 docker run --restart always -p 80:80 -d nginx
 """
+
+"""
+ci/cd
+
+in long run we will not hardcode our env variables in the remote machine
+and we will use the ci/cd to configure the remote machine
+"""

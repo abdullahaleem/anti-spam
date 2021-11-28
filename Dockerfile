@@ -9,7 +9,7 @@ COPY ./.env home/.env
 WORKDIR /home
 
 # making entrypoint.sh executable. it might work without this, but it's safer
-RUN chmod +x ./home/entrypoint.sh
+RUN chmod +x entrypoint.sh
 
 RUN apt-get update && \
     apt-get install -y \

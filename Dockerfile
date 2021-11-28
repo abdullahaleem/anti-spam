@@ -1,7 +1,7 @@
 FROM python:3.9-slim
 
 COPY ./src/app/ ./app/
-COPY ./requirements.txt ./
+COPY ./requirements.txt /requirements.txt
 
 RUN apt-get update && \
     apt-get install -y \

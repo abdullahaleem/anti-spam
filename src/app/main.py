@@ -117,6 +117,9 @@ sudo apt-get update -y
 curl -fsSL https://get.docker.com -o get_docker.sh
 sudo bash get_docker.sh
 sudo apt-get autoremove -y # after installing things
+
+
+
 """
 """
 nginx

@@ -13,8 +13,9 @@ RUN apt-get update && \
     unzip \
     chromium-driver \
     gcc \ 
-    make \
-    python3.8-venv
+    make 
+
+RUN apt install python3.8-venv
 
 # create a virtual environment
 RUN python3 -m venv /opt/venv && /opt/venv/bin/python -m pip install -r requirements.txt

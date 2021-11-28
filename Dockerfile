@@ -8,35 +8,35 @@ COPY ./.env home/.env
 
 WORKDIR /home
 
-# making entrypoint.sh executable. it might work without this, but it's safer
-RUN chmod +x /entrypoint.sh
+# # making entrypoint.sh executable. it might work without this, but it's safer
+# RUN chmod +x ./entrypoint.sh
 
-RUN apt-get update && \
-    apt-get install -y \
-    build-essential \
-    python3-dev \
-    python3-setuptools \
-    git \
-    git-crypt \
-    unzip \
-    chromium-driver \
-    gcc \ 
-    make 
+# RUN apt-get update && \
+#     apt-get install -y \
+#     build-essential \
+#     python3-dev \
+#     python3-setuptools \
+#     git \
+#     git-crypt \
+#     unzip \
+#     chromium-driver \
+#     gcc \ 
+#     make 
 
-RUN apt-get install python3.9-venv -y
+# RUN apt-get install python3.9-venv -y
 
-# create a virtual environment and install requirements
-# /opt/venv is the standard for path to the virtual environment
-# currently, the virtual environment is not activated when we do /bin/bash
-# we can actiavte it by running source /opt/venv/bin/activate
-RUN python3 -m venv /opt/venv && /opt/venv/bin/python -m pip install -r requirements.txt
-#RUN pip install -r requirements.txt
+# # create a virtual environment and install requirements
+# # /opt/venv is the standard for path to the virtual environment
+# # currently, the virtual environment is not activated when we do /bin/bash
+# # we can actiavte it by running source /opt/venv/bin/activate
+# RUN python3 -m venv /opt/venv && /opt/venv/bin/python -m pip install -r requirements.txt
+# #RUN pip install -r requirements.txt
 
-RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
+# RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
-# running the pipelines
-# we are downloading model in the docker container when tis being build
-# this is not the most effective and efficent way to do this
-RUN /opt/venv/bin/python -m pypyr src/pipelines/ml-model-download
+# # running the pipelines
+# # we are downloading model in the docker container when tis being build
+# # this is not the most effective and efficent way to do this
+# RUN /opt/venv/bin/python -m pypyr src/pipelines/ml-model-download
 
-CMD ["entrypoint.sh"]
+# CMD ["entrypoint.sh"]

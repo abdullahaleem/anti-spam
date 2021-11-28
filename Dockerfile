@@ -12,15 +12,14 @@ RUN apt-get update && \
     git-crypt \
     unzip \
     chromium-driver \
-    gcc \
-    make
-
-RUN apt-get autoremove -y \
-    && rm -rf /var/lib/apt/lists/*
+    gcc \ 
+    make \
+    python3.8-venv
 
 # create a virtual environment
-RUN python3 -m venv /opt/venv && \
-    /opt/venv/bin/python -m pip install -r requirements.txt
+RUN python3 -m venv /opt/venv && /opt/venv/bin/python -m pip install -r requirements.txt
+
+RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 
 #RUN pip install -r requirements.txt
 

@@ -132,4 +132,11 @@ ci/cd
 
 in long run we will not hardcode our env variables in the remote machine
 and we will use the ci/cd to configure the remote machine
+we can use terraform to help automate all of this configuation and deployment process
+once we have mostly configured it is something that would be done on regular basis
+
+
+we dont have to astradb_connect.zip or models in our docker and we need to setup pipelines
+to automate the process of getting those things. we will bring pipeline in docker as well
+
 """

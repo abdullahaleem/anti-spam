@@ -118,7 +118,20 @@ curl -fsSL https://get.docker.com -o get_docker.sh
 sudo bash get_docker.sh
 sudo apt-get autoremove -y # after installing things
 
+every once in a while while you are updating a project simple do
+the reason is once you start building things on produciton env it will starting eating up room
+so pruning it is a good idea
+docker system prune -a --volumes
 
+docker run -it image-name /bin/bash is like ssh into the container
+
+Once we the gunicorn inside docker we don't actually have access to the app
+as its still running locally
+we will use the following command to make the app available
+over here we are making setting the env variable port to 8001 as we can from entrypoint.sh although the default is 8000.
+Next we map the outside port 80 (default) to that port inside the container which gunicorn in running on
+Next we will also detach it.
+docker run --restart always -e PORT=8001 -p 80:8001 -d spam-detection
 
 """
 """

@@ -45,7 +45,7 @@ def on_startup():
 
 @app.get("/")
 def read_index(q: Optional[str]=None):
-    return {"info": "spam detection website"}
+    return {"info": "spam detection api. make a post request with a text"}
 
 # we want the query to be something we pass in whichi would be a url parameter e.g. /?q=this is awesome
 # the input has to be q we can't name it arbitrarily string etc.
@@ -158,4 +158,27 @@ decrpyt in our production application
 
 we want to automate as much such as possible so we dont have to do it manually
 we want to know how to do it manaually first before automating using ci cd piplines
+"""
+"""
+Consideration we should have while updating our code and project
+We would clone the virtual machine, make changes to the clone and then rotate things.
+On digital ocean to clone we can make an image of the vm (snapshot) and do it that way
+We would also add a private ip address to these vm so we can implement a load balancer.
+The idea is with the new clone we would power it on. Then we can make changes to a clone and
+replicate it again to other one. But that wont be efficent. 
+What would be more efficent and better in long term would be to have a load balancer.
+The load balancer would do a couple of things.
+ 1. it would distribute the load accross the machine so not one of them is handling everything
+ 2. it will allow us to rotate the vm machines easily.
+
+We can automate most of this stuff using IaC.
+We can use github actions to run workflows and use tool like terraform to provision the infrastructure
+as in turning on our instances, adding load baalncers, write scipts to pull all the code, run docker install, build etc.
+All of the stuff can be handled using a combination of github actions and terraform.
+Doing things manually is how you end up causing alot of errors and breaking alot of stuff causing downtime.
+
+Another part about actions which is very cool and will better secture the environment is that you can put
+env variable in github actions so you are not manually doing it e.g. hardcoding.
+
+We need to have an automated deployment pipeline.
 """

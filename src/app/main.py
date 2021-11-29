@@ -155,4 +155,7 @@ to automate the process of getting those things. we will bring pipeline in docke
 one method we can get astra-db connect to docker is using a pipeline but one problem is that 
 its not encrypted. what we actually wanna do is encrpt this and upload it onto git and then
 decrpyt in our production application
+
+we want to automate as much such as possible so we dont have to do it manually
+we want to know how to do it manaually first before automating using ci cd piplines
 """

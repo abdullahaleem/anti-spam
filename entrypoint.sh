@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 
 # equal to the environment port that comes in or the default port of 8000
 RUN_PORT=${PORT:-8000}

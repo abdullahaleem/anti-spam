@@ -3,6 +3,7 @@ venv-spam-detection/
 data/
 models/
 src/app/ignored/
+src/app/decrypted_db
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

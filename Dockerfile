@@ -37,6 +37,9 @@ RUN apt-get autoremove -y && rm -rf /var/lib/apt/lists/*
 # running the pipelines
 # we are downloading model in the docker container when tis being build
 # this is not the most effective and efficent way to do this
+# we need to make sure we have correct environment variables set before we run our pipelines
 RUN /opt/venv/bin/python -m pypyr src/pipelines/ml-model-download
+RUN /opt/venv/bin/python -m pypyr src/pipelines/decrypt 
 
-CMD ["entrypoint.sh"]
+
+CMD ["./entrypoint.sh"]

@@ -139,4 +139,7 @@ once we have mostly configured it is something that would be done on regular bas
 we dont have to astradb_connect.zip or models in our docker and we need to setup pipelines
 to automate the process of getting those things. we will bring pipeline in docker as well
 
+one method we can get astra-db connect to docker is using a pipeline but one problem is that 
+its not encrypted. what we actually wanna do is encrpt this and upload it onto git and then
+decrpyt in our production application
 """
